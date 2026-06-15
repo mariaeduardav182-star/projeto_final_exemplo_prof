@@ -1,6 +1,6 @@
 :root {
-    --caramel: #C67A42;
-    --dark: #2D1A12;
+    --color-primary-caramel : #C67A42;
+    --dark-text: #2D1A12;
     --cream: #FDF9F4;
     --beige: #F2E3D5;
     --footer: #180D08;
@@ -27,7 +27,7 @@ body {
 
 .hero-section {
     height: 100vh;
-    background: url('../img/hero.jpg') center center/cover;
+    background: url('../img/hero.png') center center/cover;
     position: relative;
     display: flex;
     align-items: center;
@@ -55,7 +55,7 @@ body {
 }
 
 .btn-caramel {
-    background: var(--caramel);
+    background: var(--color-primary-caramel );
     color: #fff;
     border: none;
 }
@@ -71,7 +71,7 @@ body {
 }
 
 .counter {
-    color: var(--caramel);
+    color: var(--color-primary-caramel );
     font-size: 3rem;
 }
 
