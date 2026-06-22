@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Loja The Cozy Bean — compre cafés, bebidas, sobremesas e produtos exclusivos.">
+    <title>Loja | The Cozy Bean</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">THE COZY BEAN</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a href="index.html#cardapio" class="nav-link">Cardápio</a></li>
+                    <li class="nav-item"><a href="index.html#galeria" class="nav-link">Galeria</a></li>
+                    <li class="nav-item"><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                </ul>
+
+                <div class="d-flex gap-2 align-items-center">
+                    <a href="#" class="btn btn-outline-light d-flex align-items-center" id="cart-button"
+                        data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+                        <i class="bi bi-cart3 me-2"></i>
+                        <span id="cart-count" class="badge bg-danger">0</span>
+                    </a>
+                    <a href="#" class="btn btn-caramel">Carrinho</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section shop-hero">
+        <div class="overlay"></div>
+        <div class="container text-center hero-content">
+            <h1 class="display-5">Loja — Produtos & Kits</h1>
+            <p class="lead">Cafés especiais, bebidas geladas, sobremesas e acessórios selecionados.</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row g-4">
+            <aside class="col-12 col-md-4 col-lg-3">
+                <div class="card p-3">
+                    <h5>Filtrar por</h5>
+                    <div class="mb-3">
+                        <label class="form-label">Categoria</label>
+                        <select id="filter-category" class="form-select">
+                            <option value="all">Todos</option>
+                            <option value="cafe">Cafés</option>
+                            <option value="bebida">Bebidas</option>
+                            <option value="sobremesa">Sobremesas</option>
+                            <option value="merch">Merch</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ordenar</label>
+                        <select id="sort-by" class="form-select">
+                            <option value="default">Padrão</option>
+                            <option value="price-asc">Preço: menor</option>
+                            <option value="price-desc">Preço: maior</option>
+                        </select>
+                    </div>
+                    <button id="apply-filters" class="btn btn-caramel w-100">Aplicar</button>
+                </div>
+
+                <div class="mt-4 p-3">
+                    <h6>Informações</h6>
+                    <p class="small">Envio em até 3 dias úteis. Trocas e devoluções conforme nossa política.</p>
+                </div>
+            </aside>
+
+            <section class="col-12 col-md-8 col-lg-9">
+                <div class="row g-4" id="product-grid">
+                    <!-- Produto 1 -->
+                    <div class="col-6 col-md-4" data-category="cafe" data-price="9.90">
+                        <div class="card product-card h-100">
+                            <img src="img/galeria15.png" class="card-img-top" alt="Café em grãos">
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="card-title">Café Doce Vida - 250g</h6>
+                                <p class="card-text text-muted mb-2">Blend especial, notas de chocolate.</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <strong>R$ 9,90</strong>
+                                    <button class="btn btn-sm btn-outline-primary add-to-cart">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 2 -->
+                    <div class="col-6 col-md-4" data-category="bebida" data-price="6.50">
+                        <div class="card product-card h-100">
+                            <img src="img/galeria10.png" class="card-img-top" alt="Latte gelado">
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="card-title">Iced Latte</h6>
+                                <p class="card-text text-muted mb-2">Leve e refrescante.</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <strong>R$ 6,50</strong>
+                                    <button class="btn btn-sm btn-outline-primary add-to-cart">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 3 -->
+                    <div class="col-6 col-md-4" data-category="sobremesa" data-price="4.20">
+                        <div class="card product-card h-100">
+                            <img src="img/galeria3.png" class="card-img-top" alt="Bolo artesanal">
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="card-title">Bolo de Canela</h6>
+                                <p class="card-text text-muted mb-2">Fatia caseira, macia.</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <strong>R$ 4,20</strong>
+                                    <button class="btn btn-sm btn-outline-primary add-to-cart">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 4 -->
+                    <div class="col-6 col-md-4" data-category="merch" data-price="29.90">
+                        <div class="card product-card h-100">
+                            <img src="img/galeria2.png" class="card-img-top" alt="Caneca The Cozy Bean">
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="card-title">Caneca The Cozy Bean</h6>
+                                <p class="card-text text-muted mb-2">Cerâmica 350ml.</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <strong>R$ 29,90</strong>
+                                    <button class="btn btn-sm btn-outline-primary add-to-cart">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Offcanvas Carrinho -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 id="cartOffcanvasLabel">Seu Carrinho</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <ul class="list-group mb-3" id="cart-items"></ul>
+
+            <div class="mt-auto">
+                <div class="d-flex justify-content-between mb-3">
+                    <strong>Total</strong>
+                    <strong id="cart-total">R$ 0,00</strong>
+                </div>
+                <button id="checkout" class="btn btn-caramel w-100">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h5 class="footer-brand">THE COZY BEAN</h5>
+                    <p class="footer-text">Compre online — Retire na loja ou receba em casa.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-insta"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-fb"><i class="bi bi-facebook"></i></a>
+                        <a href="https://wa.me/552199567454" target="_blank" rel="noopener noreferrer" class="social-wa"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-tt"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social-x"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-4">&copy; 2026 The Cozy Bean — Todos os direitos reservados.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

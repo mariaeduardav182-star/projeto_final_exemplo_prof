@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Cozy Bean — cafeteria moderna com café artesanal, ambiente acolhedor e reservas online.">
 
     <title>The Cozy Bean | Cafeteria Moderna</title>
 
@@ -36,7 +37,7 @@
                 THE COZY BEAN
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
 
                 <span class="navbar-toggler-icon"></span>
 
@@ -129,9 +130,11 @@
 
     </header>
 
-    <!-- ===================================
-         CONTADORES
-    ==================================== -->
+        <main>
+
+        <!-- ===================================
+            CONTADORES
+        ==================================== -->
 
     <section class="stats">
 
@@ -181,7 +184,7 @@
 
                 <div class="col-lg-6">
 
-                    <img src="img/galeria2.png" class="img-fluid rounded shadow">
+                    <img src="img/galeria2.png" class="img-fluid rounded shadow" alt="Interior da cafeteria com clientes">
 
                 </div>
 
@@ -209,22 +212,48 @@
     ========================================-->
     <section class="container section-padding">
         <div id="carouselCafe" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselCafe" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselCafe" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselCafe" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/galeria15.png" class="d-block w-10 rounded mx-auto">
-                    <p>Seu café perfeito</p>
-                </div>
-                
-                <div class="carousel-item active">
-                    <img src="img/galeria10.png" class="d-block w-10 rounded mx-auto">
-                    <p>Qualidade e sabor</p>
+                    <img src="img/galeria15.png" class="d-block w-100" alt="Café sendo servido">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Seu café perfeito</h5>
+                        <p>Sabores preparados com carinho.</p>
+                    </div>
                 </div>
 
-                <div class="carousel-item active">
-                    <img src="img/galeria18.png" class="d-block w-10 rounded mx-auto">
-                    <p>Experiências únicas</p>
+                <div class="carousel-item">
+                    <img src="img/galeria10.png" class="d-block w-100" alt="Xícara de café com latte art">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Qualidade e sabor</h5>
+                        <p>Receitas artesanais e consistência.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="img/galeria18.png" class="d-block w-100" alt="Ambiente da cafeteria">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Experiências únicas</h5>
+                        <p>Um espaço acolhedor para suas memórias.</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCafe" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselCafe" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
         </div>
     </section>
 
@@ -242,9 +271,8 @@
 
             <div class="gallery-grid">
 
-                <img src="img/galeria3.png">
-                <img src="img/galeria2.png">
-
+                <img src="img/galeria3.png" alt="Copo de café na mesa">
+                <img src="img/galeria2.png" alt="Balcão da cafeteria">
 
             </div>
 
@@ -268,11 +296,13 @@
 
                 <form>
 
-                    <input type="text" class="form-control" placeholder="Nome Completo">
+                    <label for="nome" class="visually-hidden">Nome completo</label>
+                    <input id="nome" name="nome" type="text" class="form-control" placeholder="Nome Completo" required>
 
-                    <input type="email" class="form-control" placeholder="E-mail">
+                    <label for="email" class="visually-hidden">E-mail</label>
+                    <input id="email" name="email" type="email" class="form-control" placeholder="E-mail" required>
 
-                    <button class="btn btn-caramel w-100">
+                    <button type="submit" class="btn btn-caramel w-100">
                         Cadastrar
                     </button>
 
@@ -354,9 +384,11 @@
 
     </section>
 
-    <!-- ===================================
-         FOOTER
-    ==================================== -->
+        </main>
+
+        <!-- ===================================
+            FOOTER
+        ==================================== -->
 
     <footer class="footer">
 
@@ -387,7 +419,7 @@
                     <ul class="footer-links">
                         <li><a href="#cardapio">Cardápio</a></li>
 
-                        <li><a href="#reserva">Reservas</a></li>
+                        <li><a href="#reservas">Reservas</a></li>
 
                         <li><a href="#galeria">Galeria</a></li>
                     </ul>
@@ -400,11 +432,11 @@
 
                     <div class="social">
 
-                       <a href="https://www.instagram.com/" id="instagram"><i class="bi bi-instagram"></i></a> 
-                       <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
-                       <a href="https://wa.me/552199567454"><i class="bi bi-whatsapp"></i></a>
-                       <a href="https://www.tiktok.com/pt-BR/"><i class="bi bi-tiktok"></i></a>
-                       <a href="https://x.com/?lang=pt"><i class="bi bi-twitter-x"></i></a>
+                       <a href="https://www.instagram.com/" id="instagram" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+                       <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+                       <a href="https://wa.me/552199567454" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+                       <a href="https://www.tiktok.com/pt-BR/" target="_blank" rel="noopener noreferrer"><i class="bi bi-tiktok"></i></a>
+                       <a href="https://x.com/?lang=pt" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
 
                     </div>
                     
